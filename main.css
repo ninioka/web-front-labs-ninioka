@@ -1,0 +1,33 @@
+body {
+    background-color: MistyRose;
+    color: Sienna;
+    font-family: Arial;
+    margin: 0px;
+}
+
+main {
+    font-size: 25px;
+}
+
+footer {
+    background-color: Sienna;
+    color: mistyrose;
+    padding: 5px; 
+    font-size: 12pt;
+    text-align: right;
+    font-style: italic;
+}
+
+header {
+    background-color: Sienna;
+    color: mistyrose;
+    padding: 5px; 
+    font-size: 14pt;
+}
+
+a {
+    text-decoration: none;
+    background-color: MistyRose;
+    color: Sienna;
+    font-size: 30px;
+}
