@@ -6,7 +6,20 @@ body {
 }
 
 main {
-    font-size: 25px;
+    background-color: MistyRose;
+    color: Sienna;
+    font-family: Arial;
+    font-size: 14pt;
+    margin: 5px;
+    font-weight: bold;
+}
+
+header {
+    background-color: Sienna;
+    color: mistyrose;
+    font-family: Arial;
+    padding: 10px; 
+    font-size: 14pt;
 }
 
 footer {
@@ -18,16 +31,8 @@ footer {
     font-style: italic;
 }
 
-header {
-    background-color: Sienna;
-    color: mistyrose;
-    padding: 5px; 
-    font-size: 14pt;
-}
-
 a {
     text-decoration: none;
     background-color: MistyRose;
     color: Sienna;
-    font-size: 30px;
 }
