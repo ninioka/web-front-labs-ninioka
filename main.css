@@ -36,3 +36,24 @@ a {
     background-color: MistyRose;
     color: Sienna;
 }
+
+a:link {
+    text-decoration: none;
+    color: sienna;
+}
+
+a:visited {
+    text-decoration: underline;
+    color: sienna;
+
+}
+
+a:hover {
+    color: salmon;
+    text-decoration: underline;
+}
+
+a:active {
+    color: black;
+    opacity: 0.7;
+}
