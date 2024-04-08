@@ -6,13 +6,13 @@ body {
 }
 
 main {
-    background-color: MistyRose;
     color: Sienna;
     font-family: Arial;
     font-size: 14pt;
     margin: 5px;
     font-weight: bold;
     margin: 10px 20px 45px;
+    height: 0;
 }
 
 header {

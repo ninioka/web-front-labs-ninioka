@@ -13,15 +13,37 @@
             height: 70px;
             line-height: 70px;
             text-align: center;
-            background-color: white;
-            border: 3px dotted darkgreen;
+            background-color: mistyrose;
+            border: 3px dotted sienna;
             margin: 15px;
+            position: static;
         }
         .position-relative {
             position: relative;
-            left: 150px;
-            top: -130px;
+            left: 145px;
+            top: -135px;
             z-index: -1;
+        }
+        .position-relative:hover{
+            z-index: 2;
+            border: 3px dotted rgb(222, 97, 83);
+            color: rgb(222, 97, 83);
+            transition: 0.3s 0.3s;
+        }
+
+        .position-absolute {
+            position: absolute;
+            left: 510px;
+            top: 89px;
+        }
+        .position-absolute:hover {
+            width: 350px;
+            height: 80px;
+            background-color: rgba(250, 128, 114, 0.3);
+            color: rgba(65, 1, 1, 0.7);
+            text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.3);
+            box-shadow: 5px 5px 5px rgb(59, 55, 55);
+            transition: 0.3s 0.3s;
         }
     </style>
 </head>
@@ -36,7 +58,7 @@
         <div class="position-relative">relative</div>
         <div>static</div>
         <div>static</div>
-        <div>static</div>
+        <div class="position-absolute">absolute</div>
         <div>static</div>
         <div>static</div>
         <div>static</div>
