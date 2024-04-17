@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Демченко Нина Николаевна. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../hesperosaurus.png" type="image/x-icon">
+    <link rel="icon" href="../hesperosaurus16x16.png">
+    <script>
+        function showSum() {
+            let a = 5154;
+            let b = 7891;
+            let result = a + b;
+            alert('Сумма ' + a + ' и ' + b + 'равна ' + result);
+        }
+    </script>
+    <style>
+        .message {
+            cursor: pointer;
+            display: inline-block;
+            width: 300px;
+            border: 3px double;
+            border-radius: 20px;
+            padding: 15px;
+            background-color: rgba(250, 128, 114, 0.3);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header onclick="showAuthor()" style="cursor: pointer;">
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main style="text-align: center;">
+        <div class="message" onclick="showSum()">
+            Сколько будет 5154+7891?
+        </div>
+        <div class="message">
+            Узнать, кто автор страницы
+        </div>
+    </main>
+
+    <footer>
+        &copy; Демченко Нина, ФБИ-22, 2 курс, 2024
+    </footer>
+    
+</body>
+</html>
