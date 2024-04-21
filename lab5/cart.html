@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Демченко Нина Николаевна. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../hesperosaurus.png" type="image/x-icon">
+    <link rel="icon" href="../hesperosaurus16x16.png">
+    <script>
+        function calculateTotal() {
+            let priceApples = 100;
+            let pricePears = 80;
+            let priceOranges = 150;
+            let priceMelons = 300;
+            let priceKiwis = 60;
+            
+            let quantityApples = document.getElementById("numberApples").value;
+            let quantityPears = document.getElementById("numberPears").value;
+            let quantityOranges = document.getElementById("numberOranges").value;
+            let quantityMelons = document.getElementById("numberMelons").value;
+            let quantityKiwis = document.getElementById("numberKiwis").value;
+            
+            let total = (priceApples * quantityApples) + (pricePears * quantityPears) + (priceOranges * quantityOranges) + (priceMelons * quantityMelons) + (priceKiwis * quantityKiwis);
+            
+            let output = document.getElementById("output");
+            output.textContent = 'Общая цена: ' + total + 'р';
+        }
+        function clearCart() {
+            document.getElementById("numberApples").value = "";
+            document.getElementById("numberPears").value = "";
+            document.getElementById("numberOranges").value = "";
+            document.getElementById("numberMelons").value = "";
+            document.getElementById("numberKiwis").value = "";
+            document.getElementById("output").textContent = 'Общая цена:';
+        }
+    </script>
+    <style>
+        div {
+            cursor: pointer;
+            display: inline-block;
+            width: 400px;
+            border: 3px double;
+            border-radius: 20px;
+            padding: 15px;
+            margin: 10px;
+            background-color: rgba(250, 128, 114, 0.3);
+            text-align: center;
+        }
+        .product {
+            width: 300px;
+        }
+        #output {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main style="text-align: center;">
+        <div>
+            <h1>Корзина товаров</h1>
+            <div class="product">
+                Яблоки (100р/шт):<br>
+                <input type="number" min="0" placeholder="Сколько яблок вам нужно?" id="numberApples" style="width: 220px;"><br>
+            </div>
+
+            <div class="product">
+                Груши (80р/шт):<br>
+                <input type="number" min="0" placeholder="Сколько груш вам нужно?" id="numberPears" style="width: 220px;"><br>
+            </div>
+            
+            <div class="product">
+                Апельсины (150р/шт):<br>
+                <input type="number" min="0" placeholder="Сколько апельсинов вам нужно?" id="numberOranges" style="width: 220px;"><br>
+            </div>
+            
+            <div class="product">
+                Дыни (300р/шт):<br>
+                <input type="number" min="0" placeholder="Сколько дынь вам нужно?" id="numberMelons" style="width: 220px;"><br>
+            </div>
+
+            <div class="product">
+                Киви (60р/шт):<br>
+                <input type="number" min="0" placeholder="Сколько киви вам нужно?" id="numberKiwis" style="width: 220px;"><br>
+            </div>
+
+            <input type="button" value="Рассчитать" onclick="calculateTotal()"><br>
+            <div id="output">Общая цена:</div><br>
+            <input type="button" value="Очистить" onclick="clearCart()">
+        </div>
+    </main>
+
+    <footer>
+        &copy; Демченко Нина, ФБИ-22, 2 курс, 2024
+    </footer>
+    
+</body>
+</html>
