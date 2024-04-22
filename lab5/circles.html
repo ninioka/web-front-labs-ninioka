@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Демченко Нина Николаевна. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../hesperosaurus.png" type="image/x-icon">
+    <link rel="icon" href="../hesperosaurus16x16.png">
+    <script>
+        function circ() {
+            let ci1 = document.getElementById('circle1');
+            circle1.style.opacity = 0;
+        }
+        function circ2() {
+            let ci2 = document.getElementById('circle2');
+            circle2.style.opacity = 0;
+        }
+        function circ3() {
+            let ci3 = document.getElementById('circle3');
+            circle3.style.opacity = 0;
+        }
+        function circ4() {
+            let ci4 = document.getElementById('circle4');
+            circle4.style.opacity = 0;
+        }
+        function circ5() {
+            let ci5 = document.getElementById('circle5');
+            circle5.style.opacity = 0;
+        }
+        function circ6() {
+            let ci6 = document.getElementById('circle6');
+            circle6.style.opacity = 0;
+        }
+        function circ7() {
+            let ci7 = document.getElementById('circle7');
+            circle7.style.opacity = 0;
+        }
+        function circ8() {
+            let ci8 = document.getElementById('circle8');
+            circle8.style.opacity = 0;
+        }
+        function circ9() {
+            let ci9 = document.getElementById('circle9');
+            circle9.style.opacity = 0;
+        }
+        function circ10() {
+            let ci10 = document.getElementById('circle10');
+            circle10.style.opacity = 0;
+        }
+        function showCircles() {
+            let circ1 = document.getElementById('circle1');
+            circle1.style.opacity = 1;
+
+            let circ2 = document.getElementById('circle2');
+            circle2.style.opacity = 1;
+
+            let circ3 = document.getElementById('circle3');
+            circle3.style.opacity = 1;
+
+            let circ4 = document.getElementById('circle4');
+            circle4.style.opacity = 1;
+
+            let circ5 = document.getElementById('circle5');
+            circle5.style.opacity = 1;
+
+            let circ6 = document.getElementById('circle6');
+            circle6.style.opacity = 1;
+
+            let circ7 = document.getElementById('circle7');
+            circle7.style.opacity = 1;
+
+            let circ8 = document.getElementById('circle8');
+            circle8.style.opacity = 1;
+
+            let circ9 = document.getElementById('circle9');
+            circle9.style.opacity = 1;
+
+            let circ10 = document.getElementById('circle10');
+            circle10.style.opacity = 1;
+        }
+    </script>
+    <style>
+        .circle {
+            display: inline-block;
+            position: absolute;
+            height: 70px;
+            width: 70px;
+            line-height: 70px;
+            text-align: center;
+            border: solid;
+            border-radius: 50px;
+            transition: 0.5s;
+            font-size: 30px;
+        }
+        #circle1 {
+            top: 300px;
+            left: 900px;
+            background-color:  rgb(255, 192, 203);
+        }
+        #circle2 {
+            top: 500px;
+            left: 900px;
+            background-color: rgb(173, 216, 230);
+        }
+        #circle3 {
+            top: 400px;
+            left: 700px;
+            background-color: rgb(255, 218, 185);
+        }
+        #circle4 {
+            top: 400px;
+            left: 1100px;
+            background-color: rgb(255, 255, 191);
+        }
+        #circle5 {
+            top: 150px;
+            left: 900px;
+            background-color: rgb(204, 255, 204);
+        }
+        #circle6 {
+            top: 650px;
+            left: 900px;
+            background-color: rgb(230, 230, 250);
+        }
+        #circle7 {
+            top: 150px;
+            left: 650px;
+            background-color: rgb(192, 192, 192);
+        }
+        #circle8 {
+            top: 650px;
+            left: 1150px;
+            background-color: rgb(245, 245, 220);
+        }
+        #circle9 {
+            top: 150px;
+            left: 1150px;
+            background-color: rgb(230, 230, 250);
+        }
+        #circle10 {
+            top: 650px;
+            left: 650px;
+            background-color: rgb(255, 250, 250);
+        }
+        input {
+            position: absolute;
+            top: 800px;
+            left: 860px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main>
+            <div class="circle" id="circle1" onclick="circ()">1</div>
+            <div class="circle" id="circle2" onclick="circ2()">2</div>
+            <div class="circle" id="circle3" onclick="circ3()">3</div>
+            <div class="circle" id="circle4" onclick="circ4()">4</div>
+            <div class="circle" id="circle5" onclick="circ5()">5</div>
+            <div class="circle" id="circle6" onclick="circ6()">6</div>
+            <div class="circle" id="circle7" onclick="circ7()">7</div>
+            <div class="circle" id="circle8" onclick="circ8()">8</div>
+            <div class="circle" id="circle9" onclick="circ9()">9</div>
+            <div class="circle" id="circle10" onclick="circ10()">10</div>
+
+            <input type="button" value="Вернуть все как было!" onclick="showCircles()">
+    </main>
+
+    <footer>
+        &copy; Демченко Нина, ФБИ-22, 2 курс, 2024
+    </footer>
+    
+</body>
+</html>

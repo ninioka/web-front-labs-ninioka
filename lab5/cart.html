@@ -65,27 +65,27 @@
             <h1>Корзина товаров</h1>
             <div class="product">
                 Яблоки (100р/шт):<br>
-                <input type="number" min="0" placeholder="Сколько яблок вам нужно?" id="numberApples" style="width: 220px;"><br>
+                <input type="number" min="0" oninput="value = Math.max(value, 0)" placeholder="Сколько яблок вам нужно?" id="numberApples" style="width: 220px;"><br>
             </div>
 
             <div class="product">
                 Груши (80р/шт):<br>
-                <input type="number" min="0" placeholder="Сколько груш вам нужно?" id="numberPears" style="width: 220px;"><br>
+                <input type="number" min="0" oninput="value = Math.max(value, 0)" placeholder="Сколько груш вам нужно?" id="numberPears" style="width: 220px;"><br>
             </div>
             
             <div class="product">
                 Апельсины (150р/шт):<br>
-                <input type="number" min="0" placeholder="Сколько апельсинов вам нужно?" id="numberOranges" style="width: 220px;"><br>
+                <input type="number" min="0" oninput="value = Math.max(value, 0)" placeholder="Сколько апельсинов вам нужно?" id="numberOranges" style="width: 220px;"><br>
             </div>
             
             <div class="product">
                 Дыни (300р/шт):<br>
-                <input type="number" min="0" placeholder="Сколько дынь вам нужно?" id="numberMelons" style="width: 220px;"><br>
+                <input type="number" min="0" oninput="value = Math.max(value, 0)" placeholder="Сколько дынь вам нужно?" id="numberMelons" style="width: 220px;"><br>
             </div>
 
             <div class="product">
                 Киви (60р/шт):<br>
-                <input type="number" min="0" placeholder="Сколько киви вам нужно?" id="numberKiwis" style="width: 220px;"><br>
+                <input type="number" min="0" oninput="value = Math.max(value, 0)" placeholder="Сколько киви вам нужно?" id="numberKiwis" style="width: 220px;"><br>
             </div>
 
             <input type="button" value="Рассчитать" onclick="calculateTotal()"><br>
