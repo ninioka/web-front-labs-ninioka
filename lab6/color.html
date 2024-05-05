@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Демченко Нина Николаевна. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../hesperosaurus.png" type="image/x-icon">
+    <link rel="icon" href="../hesperosaurus16x16.png">
+    <script>
+        function changeColor(div) {
+            if (div.style.backgroundColor == 'rgba(233, 150, 122, 0.7)') {
+                div.style.backgroundColor = 'rgba(165, 42, 42, 0.7)';
+                document.getElementById('color-name').innerHTML = 'Brown';
+                div.style.color = 'rgb(255, 228, 225)';
+            }
+            else if (div.style.backgroundColor == 'rgba(165, 42, 42, 0.7)') {
+                div.style.backgroundColor = 'rgba(205, 92, 92, 0.7)';
+                document.getElementById('color-name').innerHTML = 'IndianRed';
+            }
+            else if (div.style.backgroundColor == 'rgba(205, 92, 92, 0.7)') {
+                div.style.backgroundColor = 'rgba(128, 0, 0, 0.7)';
+                document.getElementById('color-name').innerHTML = 'Maroon';
+            }
+            else if (div.style.backgroundColor == 'rgba(128, 0, 0, 0.7)') {
+                div.style.backgroundColor = 'rgba(178, 34, 34, 0.5)';
+                document.getElementById('color-name').innerHTML = 'FireBrick';
+            }
+            else {
+                div.style.backgroundColor = 'rgba(233, 150, 122, 0.7)';
+                div.style.color = 'rgb(160, 82, 45)';
+                document.getElementById('color-name').innerHTML = 'DarkSalmon';
+            }
+        }
+    </script>
+    <style>
+        .color {
+            cursor: grab;
+            background-color: rgba(233, 150, 122, 0.7);
+            text-align: center;
+            border: 4px double;
+            border-radius: 50px;
+            padding: auto;
+            width: 800px;
+            line-height: 40px;
+            margin: auto;
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+        <div class="color" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name">DarkSalmon</span><br>
+            Дважды нажмите, чтобы изменить цвет!
+        </div>
+    </main>
+
+    <footer>
+        &copy; Демченко Нина, ФБИ-22, 2 курс, 2024
+    </footer>
+    
+</body>
+</html>
