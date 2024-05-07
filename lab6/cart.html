@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Демченко Нина Николаевна. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../hesperosaurus.png" type="image/x-icon">
+    <link rel="icon" href="../hesperosaurus16x16.png">
+    <script>
+        function totalCost() {
+            let inputBalance = document.getElementById('balance').value;
+            let balance = Math.max(inputBalance, 0);
+
+            const pricePears = 120;
+            const priceApples = 60;
+            const priceBananas = 170;
+            const priceOranges = 130;
+            const priceKiwis = 300;
+            const priceNectarines = 370;
+            const pricePlums = 530;
+
+            let quantityPears = document.getElementById("numberPears").value;
+            let quantityApples = document.getElementById("numberApples").value;
+            let quantityBananas = document.getElementById("numberBananas").value;
+            let quantityOranges = document.getElementById("numberOranges").value;
+            let quantityKiwis = document.getElementById("numberKiwis").value;
+            let quantityNectarines = document.getElementById("numberNectarines").value;
+            let quantityPlums = document.getElementById("numberPlums").value;
+
+            let total = (pricePears * quantityPears) + (priceApples * quantityApples) + (priceBananas * quantityBananas) + (priceOranges * quantityOranges) + 
+            (priceKiwis * quantityKiwis) + (priceNectarines * quantityNectarines) + (pricePlums * quantityPlums);
+
+            let output = document.getElementById("output");
+            output.textContent = 'Общая цена: ' + total + 'р';
+
+            let message = document.getElementById('result');
+
+            if (balance == '') {
+                message.innerHTML = 'Введите остаток средств на балансе!';
+                }
+            else if (balance < total) {
+                message.innerHTML = 'У вас недостаточно средств на балансе!';
+            }
+            else if (quantityPears < 0 || quantityApples < 0 || quantityBananas < 0 || quantityOranges < 0 || quantityKiwis < 0 || quantityNectarines < 0 || quantityPlums < 0) {
+                message.innerHTML = 'Количество товаров не может быть отрицательным!';
+            }
+            else if (quantityPears == 0 && quantityApples == 0 && quantityBananas == 0 && quantityOranges == 0 && quantityKiwis == 0 && quantityNectarines == 0 && quantityPlums == 0) {
+                message.innerHTML = 'Выберите хотя бы один товар!';
+            }
+            else {
+                message.innerHTML = 'Корзина успешно оформлена!';
+            }
+        }
+        function clearCart() {
+            document.getElementById('balance').value = "";
+            document.getElementById("numberPears").value = "";
+            document.getElementById("numberApples").value = "";
+            document.getElementById("numberBananas").value = "";
+            document.getElementById("numberOranges").value = "";
+            document.getElementById("numberKiwis").value = "";
+            document.getElementById("numberNectarines").value = "";
+            document.getElementById("numberPlums").value = "";
+            document.getElementById("output").textContent = 'Общая цена:';
+            document.getElementById('result').textContent = "";
+        }
+    </script>
+    <style>
+        .cart {
+            margin: auto;
+            padding: 10px;
+            text-align: center;
+            border: 3px double;
+            border-radius: 50px;
+            width: 30%;
+            background-color: rgba(242, 146, 135, 0.3);
+        }
+        table {
+            border: 2px solid;
+            border-radius: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+            background-color: mistyrose;
+        }
+        td {
+            border: 1px solid;
+            border-radius: 5px;
+            padding: 5px;
+            width: 100px;
+        }
+        input {
+            width: 220px;
+            border-radius: 30px;
+        }
+        button {
+            cursor: pointer;
+            margin: 10px;
+            font-size: 18px;
+            background-color: mistyrose;
+            border: 2px dashed;
+            border-radius: 10px;
+            border-color: rgba(41, 22, 19, 0.7);
+            color: rgba(49, 26, 23, 0.7);
+            box-shadow: 4px 3px 3px rgba(96, 49, 44, 0.3);
+        }
+        button:hover {
+            color: rgb(93, 35, 28);
+            text-shadow: 4px 3px 3px rgba(181, 93, 83, 0.3);
+            background-color: rgba(250, 128, 114, 0.3);
+            border: 2px solid;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+        <div class="cart">    
+            <div>
+                <h2>Корзина товаров</h2>
+
+                <div>
+                    <label>Мой баланс:<input type="number" min="0" placeholder="Сколько у вас средств?" id="balance"></label>
+                </div>
+    
+                <table>
+                    <tr>
+                        <td>№</td>
+                        <td>Название</td>
+                        <td>Цена<br>р/кг</td>
+                        <td>Количество</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Груши</td>
+                        <td>120</td>
+                        <td><input type="number" placeholder="Сколько груш вам нужно?" id="numberPears"></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Яблоки</td>
+                        <td>60</td>
+                        <td><input type="number" placeholder="Сколько яблок вам нужно?" id="numberApples"></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Бананы</td>
+                        <td>170</td>
+                        <td><input type="number" placeholder="Сколько бананов вам нужно?" id="numberBananas"></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Апельсины</td>
+                        <td>130</td>
+                        <td><input type="number" placeholder="Сколько апельсинов вам нужно?" id="numberOranges"></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Киви</td>
+                        <td>300</td>
+                        <td><input type="number" placeholder="Сколько киви вам нужно?" id="numberKiwis"></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Нектарины</td>
+                        <td>370</td>
+                        <td><input type="number" placeholder="Сколько нектаринов вам нужно?" id="numberNectarines"></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Сливы</td>
+                        <td>530</td>
+                        <td><input type="number" placeholder="Сколько слив вам нужно?" id="numberPlums"></td>
+                    </tr>
+                </table>
+            </div>
+            <button onclick="totalCost()">Рассчитать</button><br>
+            <div id="output">Итого:</div><br>
+            <div id="result"></div>
+            <button onclick="clearCart()">Очистить</button>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Демченко Нина, ФБИ-22, 2 курс, 2024
+    </footer>
+    
+</body>
+</html>
