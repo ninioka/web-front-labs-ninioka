@@ -13,24 +13,23 @@
             newBlock.style.backgroundColor = 'sienna';
             newBlock.style.height = '35px';
             newBlock.style.width = '500px';
-            newBlock.style.margin = '10px';
+            newBlock.style.margin = '0 auto 10px auto';
             newBlock.style.border = '2.5px solid rgb(74, 41, 31)';
 
             document.querySelector('main').appendChild(newBlock);
         }
         function addNewBlocks() {
-            let inputBlocks = document.getElementById('numberBlocks');
-            let block = parseInt(inputBlocks.value) || 0;
+            let input = document.getElementById('numberBlocks').value;
 
             let main = document.querySelector('main');
-            for(let i = 0; i<block; i++) {
+            for(let i = 0; i<input; i++) {
                 let newBlock = document.createElement('div');
                 newBlock.style.backgroundColor = 'sienna';
                 newBlock.style.height = '35px';
                 newBlock.innerHTML = `Блок № ${i+1}: 2*${i}<sup>2</sup> = ${2 * i**2}`;
                 newBlock.style.color = 'mistyrose';
                 newBlock.style.width = `${200 + i*20}px`;
-                newBlock.style.margin = '10px';
+                newBlock.style.margin = '0 auto 10px auto';
                 newBlock.style.border = '2.5px solid rgb(74, 41, 31)';
                 
                 main.appendChild(newBlock);
@@ -44,7 +43,7 @@
                 newBlock.style.color = 'mistyrose';
                 newBlock.style.width = '200px';
                 newBlock.style.height = '35px';
-                newBlock.style.margin = '10px';
+                newBlock.style.margin = '0 auto 10px auto';
                 newBlock.style.border = '2.5px solid rgb(74, 41, 31)';
                 newBlock.style.borderRadius = '30px';
                 newBlock.style.textAlign = 'center';
@@ -61,13 +60,13 @@
                 let newBlock = document.createElement('div');
                 newBlock.style.backgroundColor = 'rgba(178, 34, 34, 0.5)';
                 newBlock.style.color = 'mistyrose';
-                newBlock.style.width = '35px';
-                newBlock.style.height = '35px';
+                newBlock.style.width = '25px';
+                newBlock.style.height = '25px';
                 newBlock.style.margin = '5px';
                 newBlock.style.border = '2.5px solid rgb(74, 41, 31)';
                 newBlock.style.borderRadius = '50%';
                 newBlock.style.textAlign = 'center';
-                newBlock.style.lineHeight = '35px';
+                newBlock.style.lineHeight = '25px';
                 newBlock.style.display = 'inline-block';
                 
                 newBlock.innerHTML = `${i}`;
@@ -83,7 +82,7 @@
                 newBlock.style.color = 'mistyrose';
                 newBlock.style.width = '500px';
                 newBlock.style.height = '35px';
-                newBlock.style.margin = '10px';
+                newBlock.style.margin = '0 auto 10px auto';
                 newBlock.style.border = '2.5px solid rgb(74, 41, 31)';
                 newBlock.style.borderRadius = '30px';
                 newBlock.style.textAlign = 'center';
@@ -95,7 +94,61 @@
                 main.appendChild(newBlock);
             }
         }
+        function addCircles() {
+            let main = document.querySelector('main');
+            let input = document.getElementById('numberCircles').value;
+            for(let i = input; i > 0; i--) {
+                let newBlock = document.createElement('div');
+                newBlock.style.color = 'mistyrose';
+                newBlock.style.width = '35px';
+                newBlock.style.height = '35px';
+                newBlock.style.margin = '5px';
+                newBlock.style.border = '2.5px solid rgba(74, 41, 31, 0.5)';
+                newBlock.style.borderRadius = '50%';
+                newBlock.style.textAlign = 'center';
+                newBlock.style.lineHeight = '35px';
+                newBlock.style.display = 'inline-block';
+                
+                newBlock.innerHTML = `${i}`;
+                main.appendChild(newBlock);
+                if (i % 2 == 0) {
+                    newBlock.style.backgroundColor = 'rgba(205, 92, 92, 0.8)';
+                } 
+                else {
+                    newBlock.style.backgroundColor = 'rgb(139, 0, 0)';
+                }
+            }
+        }
     </script>
+    <style>
+        div {
+            margin: 0 auto 10px auto;
+            padding: 10px;
+            text-align: center;
+            border: 3px double;
+            width: 30%;
+            background-color: rgba(242, 146, 135, 0.3);
+        }
+        button {
+            cursor: pointer;
+            margin: 10px;
+            font-size: 18px;
+            background-color: rgba(250, 128, 114, 0.3);
+            border: 2px dashed;
+            border-radius: 10px;
+            border-color: rgba(41, 22, 19, 0.7);
+            color: rgba(49, 26, 23, 0.7);
+            box-shadow: 4px 3px 3px rgba(96, 49, 44, 0.3);
+        }
+        button:hover {
+            border: 2px solid;
+            border-radius: 50px;
+        }
+        input {
+            width: 180px;
+            border-radius: 30px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -103,12 +156,16 @@
     </header>
 
     <main>
-        <button onclick="addNewBlock()">Добавить блок</button><br>
-        <input type="number" placeholder="Сколько блоков вывести?" min="0" id="numberBlocks">
-        <button onclick="addNewBlocks()">Добавить блоки</button><br>
-        <button onclick="add20_50()">20 => 50</button><br>
-        <button onclick="add10_80()">10 => -80</button>
-        <button onclick="addOpacity()">Полупрозрачные блоки</button>
+        <div>
+            <button onclick="addNewBlock()">Добавить блок</button><br>
+            <button onclick="add20_50()">20 => 50</button><br>
+            <button onclick="add10_80()">10 => -80</button><br>
+            <button onclick="addOpacity()">Полупрозрачные блоки</button><br>
+            <input type="number" placeholder="Сколько блоков вывести?" min="0" oninput="value = Math.max(value, 0)" id="numberBlocks">
+            <button onclick="addNewBlocks()">Добавить блоки</button><br>
+            <input type="number" placeholder="Сколько кругов вывести?" min="0" oninput="value = Math.max(value, 0)" id="numberCircles">
+            <button onclick="addCircles()">Цветные круги</button>
+        </div>
     </main>
 
     <footer>
