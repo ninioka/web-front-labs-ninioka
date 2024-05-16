@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="../main.css">
     <link rel="shortcut icon" href="../hesperosaurus.png" type="image/x-icon">
     <link rel="icon" href="../hesperosaurus16x16.png">
+    <script>
+        function addNewBlock() {
+            let newBlock = document.createElement('div');
+            newBlock.style.backgroundColor = 'sienna';
+            newBlock.style.height = '25px';
+            newBlock.style.width = '500px'
+            newBlock.style.margin = '10px'
+            newBlock.style.border = '2.5px solid rgb(74, 41, 31)';
+
+            document.querySelector('main').appendChild(newBlock);
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -14,11 +26,7 @@
     </header>
 
     <main>
-        <ul>
-            <li>
-                <a href="bloks.html">Добавление блоков</a>
-            </li>
-        </ul>
+        <button onclick="addNewBlock()">Добавить блок</button>
     </main>
 
     <footer>
