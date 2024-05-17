@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Демченко Нина Николаевна. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../hesperosaurus.png" type="image/x-icon">
+    <link rel="icon" href="../hesperosaurus16x16.png">
+    <script>
+        function showExchange() {
+            const exchange = [93.4419, 93.5891, 94.0742, 94.3242, 94.0922, 93.4409, 93.2519, 93.2918, 92.5058, 92.1314];
+            let table = document.getElementById('dollar-table');
+            for(let i = 0; i < exchange.length; i++) {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.innerText = exchange[i];
+                tr.appendChild(td);
+                table.appendChild(tr);
+                table.style.margin = 'auto';
+                table.style.width = '30%';
+                table.style.border = '2px solid sienna';
+                td.style.border = '2px solid sienna';
+            }
+
+            let sum = 0;
+            for(let i = 0; i < exchange.length; i++) {
+                sum += exchange[i];
+            }
+            let average = sum / exchange.length;
+            average = average.toFixed(2);
+
+            let detail = document.getElementById('detail');
+            detail.innerText = `Среднее значение: ${average}`;
+            
+            let button = document.querySelector('button');
+            button.style.display = 'none';
+        }
+    </script>
+    <style>
+        .all {
+            margin: 10px auto;
+            padding: 10px;
+            text-align: center;
+            border: 3px double;
+            border-radius: 50px;
+            background-color: rgba(250, 128, 114, 0.3);
+            width: 30%;
+        }
+         button {
+            cursor: pointer;
+            margin: 10px;
+            font-size: 18px;
+            background-color: rgba(250, 128, 114, 0.3);
+            border: 2px dashed;
+            border-radius: 10px;
+            border-color: rgba(41, 22, 19, 0.7);
+            color: rgba(49, 26, 23, 0.7);
+            box-shadow: 4px 3px 3px rgba(96, 49, 44, 0.3);
+        }
+        button:hover {
+            border: 2px solid;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <div class="all">
+            <button onclick="showExchange()">Курс доллара</button>
+        <table border="1" id="dollar-table"></table>
+        <div id="detail"></div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Демченко Нина, ФБИ-22, 2 курс, 2024
+    </footer>
+    
+</body>
+</html>
