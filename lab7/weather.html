@@ -8,46 +8,35 @@
     <link rel="shortcut icon" href="../hesperosaurus.png" type="image/x-icon">
     <link rel="icon" href="../hesperosaurus16x16.png">
     <script>
-        function showExchange() {
-            const exchange = [93.4419, 93.5891, 94.0742, 94.3242, 94.0922, 93.4409, 93.2519, 93.2918, 92.5058, 92.1314];
-            let table = document.getElementById('dollar-table');
-            for(let i = 0; i < exchange.length; i++) {
-                let tr = document.createElement('tr');
-                let td = document.createElement('td');
-                td.innerText = exchange[i];
-                tr.appendChild(td);
-                table.appendChild(tr);
-                table.style.margin = 'auto';
-                table.style.width = '30%';
-                table.style.border = '2px solid sienna';
-                td.style.border = '2px solid sienna';
-            }
+        function getWeatherForecast() {
+            const url = 'https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok';
+            fetch(url)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(json) {
+                    const temp8am = json.hourly.temperature_2m[8];
+                    const temp12pm = json.hourly.temperature_2m[12];
+                    const temp8pm = json.hourly.temperature_2m[20];
 
-            let sum = 0;
-            for(let i = 0; i < exchange.length; i++) {
-                sum += exchange[i];
-            }
-            let average = sum / exchange.length;
-            average = average.toFixed(2);
-
-            let detail = document.getElementById('detail');
-            detail.innerText = `Среднее значение: ${average}`;
-            
-            let button = document.querySelector('button');
-            button.style.display = 'none';
+                    document.getElementById('temperature8am').innerText = `Температура в 8 утра: ${temp8am} °C`;
+                    document.getElementById('temperature12pm').innerText = `Температура в 12 дня: ${temp12pm} °C`;
+                    document.getElementById('temperature8pm').innerText = `Температура в 20 вечера: ${temp8pm} °C`;
+                })
         }
     </script>
     <style>
         .all {
+            width: 35%;
             margin: auto;
-            padding: 10px;
+            padding: 5px;
             text-align: center;
             border: 3px double;
             border-radius: 50px;
             background-color: rgba(250, 128, 114, 0.3);
             width: 30%;
         }
-         button {
+        button {
             cursor: pointer;
             margin: 10px;
             font-size: 18px;
@@ -71,9 +60,10 @@
 
     <main>
         <div class="all">
-            <button onclick="showExchange()">Курс доллара</button>
-            <table border="1" id="dollar-table"></table>
-            <div id="detail"></div>
+            <button onclick="getWeatherForecast()">Прогноз погоды</button>
+            <div id="temperature8am"></div>
+            <div id="temperature12pm"></div>
+            <div id="temperature8pm"></div>
         </div>
     </main>
 
