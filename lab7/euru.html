@@ -19,20 +19,19 @@
                     const prevDate = json.PreviousDate;
                     
                     const currentRate = json.Valute.EUR.Value;
-                    const prevRate = json.Valute.EUR.Previous;
-                    const diff = currentRate - prevRate;
+                    const previousRate = json.Valute.EUR.Previous;
+                    const diff = currentRate - previousRate;
                     let rate = "";
                     if (diff > 0) {
-                        rate = "Курс поднялся на " + Math.abs(diff);
-                    } else if (diff < 0) {
-                        rate = "Курс опустился на " + Math.abs(diff);
-                    } else {
-                        rate = "Курс остался без изменений";
+                        rate = "Курс поднялся на: " + Math.abs(diff);
+                    } 
+                    else if (diff < 0) {
+                        rate = "Курс опустился на: " + Math.abs(diff);
                     }
                     
                     document.getElementById('currency-rate').textContent = `Текущий курс евро: ${currentRate}`;
                     document.getElementById('date').textContent = `Дата запроса: ${currentDate}`;
-                    document.getElementById('prev-rate').textContent = `Курс за прошлую дату: ${prevRate}`;
+                    document.getElementById('prev-rate').textContent = `Курс за прошлую дату: ${previousRate}`;
                     document.getElementById('diff').textContent = rate;
                     document.getElementById('source').style.display = 'block';
                 })
@@ -42,6 +41,7 @@
         .all {
             width: 35%;
             margin: auto;
+            padding: 5px;
             text-align: center;
             border: 3px double;
             border-radius: 50px;
@@ -78,7 +78,7 @@
             <div id="prev-rate"></div>
             <div id="diff"></div>
             <div div id="source" style="display:none;">
-                <a href="https://www.cbr-xml-daily.ru/" id="source">Источник данных</a>
+                <a href="https://www.cbr-xml-daily.ru/">Источник данных</a>
             </div>
         </div>
     </main>
