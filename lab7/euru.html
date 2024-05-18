@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Демченко Нина Николаевна. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../hesperosaurus.png" type="image/x-icon">
+    <link rel="icon" href="../hesperosaurus16x16.png">
+    <script>
+        function getEuroExchangeRate() {
+            const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
+            fetch(url)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(json) {
+                    const currentDate = json.Date;
+                    const prevDate = json.PreviousDate;
+                    
+                    const currentRate = json.Valute.EUR.Value;
+                    const prevRate = json.Valute.EUR.Previous;
+                    const diff = currentRate - prevRate;
+                    let rate = "";
+                    if (diff > 0) {
+                        rate = "Курс поднялся на " + Math.abs(diff);
+                    } else if (diff < 0) {
+                        rate = "Курс опустился на " + Math.abs(diff);
+                    } else {
+                        rate = "Курс остался без изменений";
+                    }
+                    
+                    document.getElementById('currency-rate').textContent = `Текущий курс евро: ${currentRate}`;
+                    document.getElementById('date').textContent = `Дата запроса: ${currentDate}`;
+                    document.getElementById('prev-rate').textContent = `Курс за прошлую дату: ${prevRate}`;
+                    document.getElementById('diff').textContent = rate;
+                    document.getElementById('source').style.display = 'block';
+                })
+        }
+    </script>
+    <style>
+        .all {
+            width: 35%;
+            margin: auto;
+            text-align: center;
+            border: 3px double;
+            border-radius: 50px;
+            background-color: rgba(250, 128, 114, 0.3);
+            width: 30%;
+        }
+        button {
+            cursor: pointer;
+            margin: 10px;
+            font-size: 18px;
+            background-color: rgba(250, 128, 114, 0.3);
+            border: 2px dashed;
+            border-radius: 10px;
+            border-color: rgba(41, 22, 19, 0.7);
+            color: rgba(49, 26, 23, 0.7);
+            box-shadow: 4px 3px 3px rgba(96, 49, 44, 0.3);
+        }
+        button:hover {
+            border: 2px solid;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <div class="all">
+            <button onclick="getEuroExchangeRate()">Курс евро</button>
+            <div id="currency-rate"></div>
+            <div id="date"></div>
+            <div id="prev-rate"></div>
+            <div id="diff"></div>
+            <div div id="source" style="display:none;">
+                <a href="https://www.cbr-xml-daily.ru/" id="source">Источник данных</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Демченко Нина, ФБИ-22, 2 курс, 2024
+    </footer>
+    
+</body>
+</html>
