@@ -16,8 +16,6 @@
                 })
                 .then(function(json) {
                     const currentDate = json.Date;
-                    const prevDate = json.PreviousDate;
-                    
                     const currentRate = json.Valute.EUR.Value;
                     const previousRate = json.Valute.EUR.Previous;
                     const diff = currentRate - previousRate;
