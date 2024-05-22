@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Демченко Нина Николаевна. Расчетно-графическая работа</title>
+    <link rel="stylesheet" href="main2.css">
+    <link rel="shortcut icon" href="favicon-16x16_rgz.png" type="image/x-icon">
+    <link rel="icon" href="favicon-16x16_rgz.png">
+    <script>
+       function showNew(newsNumber) {
+            let screens = document.getElementsByClassName('card' + newsNumber);
+            screens[0].style.display = 'block';
+            screens[1].style.display = 'none';
+            screens[2].style.display = 'block';
+
+        }
+        function hideNew(newsNumber) {
+            let screens = document.getElementsByClassName('card' + newsNumber)
+            screens[0].style.display = 'none';
+            screens[1].style.display = 'block';
+            screens[2].style.display = 'none';
+        }
+    </script>
+    <style>
+        h5 {
+            font-weight: 100;
+        }
+        div {
+            font-size: 22px;
+            font-weight: 100;
+        }
+        .screen1 {
+            display: flex;
+            line-height: 1.5;
+        }
+        .news-card {
+            display: inline-block;
+            background-color: #f8f8fa;
+            border-radius: 50px;
+            padding: 10px;
+            margin: 10px;
+            width: 40%;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0px 2px 8px 0px rgba(99, 99, 99, 0.2);
+        }
+        .display {
+            display: flex;
+        }
+        button {
+            cursor: pointer;
+            margin: auto;
+            background-color: rgb(95, 192, 46);
+            border-radius: 10px;
+            font-size: 20px;
+            border: none;
+            height: 40px;
+            color: #f8f8fa;
+            box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.15);
+            text-shadow: rgb(83, 81, 81) 5px 2px 10px;
+        }
+        button:hover {
+            border-radius: 15px;
+        }
+        #but {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    </header>
+
+    <main>
+        <div class="menu">
+            <h3 style="color: rgb(232, 8, 32);">Навигация</h3>
+            <ul>
+                <li>
+                    <a href="about.html">О компании</a>
+                </li>
+                <li>
+                    <a href="news.html">Новости</a>
+                </li>
+                <li><a href="">Курс валют</a></li>
+                <li><a href="">Контактные данные</a></li>
+                <li><a href="">Видео</a></li>
+            </ul>
+        </div>
+
+        <h1>Новости</h1>
+            <div class="screen1">
+                <p>
+                    Следите за новостями нашей компании на удобной вам платформе<br>
+                    (<a href="https://vk.com/prleasing" style="color: #646472;">Вконтакте</a>, 
+                    <a href="https://t.me/prleasing" style="color: #646472;">Telegram</a>, 
+                    <a href="https://www.youtube.com/channel/UChB3GfolMj6JpM0yA_c2T_w" style="color: #646472;">YouTube</a>, 
+                    <a href="https://tenchat.ru/prleasing" style="color: #646472;">Tenchat</a>), 
+                    чтобы всегда быть в центре<br>событий и первыми узнавать о возможностях, которые открывает<br>
+                    «ПР-Лизинг» для вашего бизнеса!
+                </p>
+                <img src="../rgz/pictures/новости.png">
+            </div>
+    
+            <img src="../rgz/pictures/1экран.png">
+
+            <h2>Новости</h2>
+
+            <div class="all">
+                <div class="news-card">
+                    <h5>21 мая 2024</h5>
+                    <h3 style="text-shadow: rgb(180, 178, 178) 5px 2px 10px;">Безопасность на высоте. Передадим в лизинг строительные люльки</h3>
+                    <div class="display">
+                        <img src="../rgz/pictures/новости2.png" width="25%" class="logo">
+                            Человека встречают по одёжке, а дом - по фасаду!
+                            Лизинг – наиболее выгодная форма приобретения оборудования и строительной техники.
+                    </div>
+                    <div style="display: none;" class="card1">
+                        <p>Наш клиент ООО «Промо-Строй» оформляет декоративные фасады 
+                        от частных домов до крупных жилых комплексов Екатеринбурга, делая необычную архитектуру визитной карточкой города.</p>
+                        <p>По договору лизинга мы передадим клиенту 9 строительных люлек. Проводить работы на них намного безопаснее, чем на лесах.</p>
+                        <p>ПР-Лизинг – безопасность превыше всего!</p>
+                    </div>
+                    <div style="display: block;" class="card1" id="but">
+                        <button onclick="showNew(1)">Подробнее</button>
+                    </div>
+                    <div style="display: none;" class="card1" id="but">
+                        <button onclick="hideNew(1)">Скрыть</button>
+                    </div>
+                </div>
+    
+                <div class="news-card">
+                    <h5>20 мая 2024</h5>
+                    <h3 style="text-shadow: rgb(180, 178, 178) 5px 2px 10px;">Команда «ПР-Лизинг» на VIII Всероссийском полумарафоне ЗаБег РФ</h3>
+                    <div class="display">
+                        <img src="../rgz/pictures/новости2.png" width="25%" class="logo">
+                        19 мая на самый масштабный старт одновременно вышли коллеги из Москвы, Санкт-Петербурга, Екатеринбурга, Уфы и Нижнего Новгорода!
+                    </div>
+                    <div style="display: none;" class="card2">
+                        <p>Сотрудники остались в полном восторге от погоды, маршрутов по перекрытому центру города, поддержки зрителей 
+                        и волонтёров, а также отметили, что данное мероприятие еще больше сплотило сотрудников из разных филиалов. Вместе - к единой цели.</p>
+                        <p>ПР-Лизинг - команда мечты!</p>
+                    </div>
+                    <div style="display: block;" class="card2" id="but">
+                        <button onclick="showNew(2)">Подробнее</button>
+                    </div>
+                    <div style="display: none;" class="card2" id="but">
+                        <button onclick="hideNew(2)">Скрыть</button>
+                    </div>
+                </div>
+    
+                <div class="news-card">
+                    <h5>18 мая 2024</h5>
+                    <h3 style="text-shadow: rgb(180, 178, 178) 5px 2px 10px;">Продолжаем заключать договоры лизинга дорожно-строительной техники</h3>
+                    <div class="display">
+                        <img src="../rgz/pictures/новости2.png" width="25%" class="logo">
+                        Ровные дороги – безопасное движение. В этом году в г. Волжском будут отремонтированы 16 объектов общей протяженностью 26,3 км!
+                    </div>
+                    <div style="display: none;" class="card3">
+                        <p>В рамках выигранного тендера «ПР-Лизинг» поставит МБУ «Комбинат благоустройства» г. Волжский верного помощника в реализации намеченных планов – асфальтоукладчик Асф-Г-4-05.
+                        Своевременное обновление парка спецтехники невероятно важно для обеспечения безопасности и комфорта дорог.</p>
+                        <p>ПР-Лизинг  – больше простого лизинга для бизнеса каждого клиента ради сильной экономики России!</p>
+                    </div>
+                    <div style="display: block;" class="card3" id="but">
+                        <button onclick="showNew(3)">Подробнее</button>
+                    </div>
+                    <div style="display: none;" class="card3" id="but">
+                        <button onclick="hideNew(3)">Скрыть</button>
+                    </div>
+                </div>
+    
+                <div class="news-card">
+                    <h5>15 мая 2024</h5>
+                    <h3 style="text-shadow: rgb(180, 178, 178) 5px 2px 10px;">Лизинг оборудования для производителя сливочного масла</h3>
+                    <div class="display">
+                        <img src="../rgz/pictures/новости2.png" width="25%" class="logo">
+                        Польза натурального сливочного масла неоспорима – в нём содержатся нутриенты, необходимые для правильной работы организма.
+                    </div>
+                    <div style="display: none;" class="card4">
+                        <p>А чтобы повысить его качество Брянский филиал «ПР-Лизинг» передаст местному производителю новый гомогенизатор производительностью 1300 кг/ч.
+                        Данное оборудование позволит получать более однородную консистенцию и температуру сливочного масла перед фасовкой.</p>
+                        <p>Напоминаем, что оборудование для производства продуктов/напитков, холодильное/морозильное, промышленные весы и посудомойки и др. можно приобрести с субсидией Минпромторга!</p>
+                        <p>ПР-Лизинг – с заботой о Вашем здоровье!</p>
+                    </div>
+                    <div style="display: block;" class="card4" id="but">
+                        <button onclick="showNew(4)">Подробнее</button>
+                    </div>
+                    <div style="display: none;" class="card4" id="but">
+                        <button onclick="hideNew(4)">Скрыть</button>
+                    </div>
+                </div>
+    
+                <div class="news-card">
+                    <h5>12 мая 2024</h5>
+                    <h3 style="text-shadow: rgb(180, 178, 178) 5px 2px 10px;">РА «Эксперт» присвоило биржевым облигациям «ПР-Лизинг» кредитный рейтинг ruBBB+</h3>
+                    <div class="display">
+                        <img src="../rgz/pictures/новости2.png" width="25%" class="logo">
+                        РА «Эксперт» присвоило биржевым облигациям «ПР-Лизинг» кредитный рейтинг ruBBB+. Кредитный рейтинг компании обусловлен приемлемыми оценками рыночных позиций.
+                    </div>
+                    <div style="display: none;" class="card5">
+                        <p>Кредитный рейтинг компании обусловлен приемлемыми оценками рыночных позиций, достаточности капитала
+                        и эффективности деятельности, адекватным качеством лизингового портфеля и позиции по ликвидности, а также адекватным уровнем корпоративного управления.</p>
+                        <p>Приобрести и реализовать облигации «ПР-Лизинг» можно и на вторичных торгах на Московской бирже.</p>
+                    </div>
+                    <div style="display: block;" class="card5" id="but">
+                        <button onclick="showNew(5)">Подробнее</button>
+                    </div>
+                    <div style="display: none;" class="card5" id="but">
+                        <button onclick="hideNew(5)">Скрыть</button>
+                    </div>
+                </div>
+    
+                <div class="news-card">
+                    <h5>11 мая 2024</h5>
+                    <h3 style="text-shadow: rgb(180, 178, 178) 5px 2px 10px;">РА «Эксперт» присвоило ООО «ПР-Лизинг» кредитный рейтинг ruBBB+, прогноз «Стабильный»</h3>
+                    <div class="display">
+                        <img src="../rgz/pictures/новости2.png" width="25%" class="logo">
+                        РА «Эксперт» присвоило ООО «ПР-Лизинг» кредитный рейтинг ruBBB+, прогноз «Стабильный». Команда ПР-Лизинг продолжит реализовывать комплекс мероприятий, направленных на улучшение!
+                    </div>
+                    <div style="display: none;" class="card6">
+                        Рейтинговым агентством «Эксперт» 08.05.2024 г. кредитный рейтинг присвоен впервые и, 
+                        согласно пресс-релизу, обусловлен приемлемыми оценками рыночных позиций, достаточности 
+                        капитала и эффективности деятельности, адекватным качеством лизингового портфеля и 
+                        позиции по ликвидности, а также адекватным уровнем корпоративного управления.
+                    </div>
+                    <div style="display: block;" class="card6" id="but">
+                        <button onclick="showNew(6)">Подробнее</button>
+                    </div>
+                    <div style="display: none;" class="card6" id="but">
+                        <button onclick="hideNew(6)">Скрыть</button>
+                    </div>
+                </div>
+    
+                <div class="news-card">
+                    <h5>08 мая 2024</h5>
+                    <h3 style="text-shadow: rgb(180, 178, 178) 5px 2px 10px;">8 мая. День в истории</h3>
+                    <div class="display">
+                        <img src="../rgz/pictures/новости2.png" width="25%" class="logo">
+                        #ПРостоИнтересно завершаем почти самую короткую рабочую неделю. Вновь вспомним, какие события происходили в этот день годы и даже столетия назад.
+                    </div>
+                    <div style="display: none;" class="card7">
+                        <p>Итак, 8 мая...</p>
+                        <ul>
+                            <li>1713 г. – столицу России перенесли из Москвы в Санкт-Петербург;</li>
+                            <li>1794 г. – в Париже казнили основателя современной химии Антуана Лавуазье;</li>
+                            <li>1945 г. – в пригороде Берлина подписали акт о безоговорочной капитуляции Германии;</li>
+                            <li>1967 г. – у Кремлевской стены на могиле Неизвестного солдата зажгли Вечный огонь;</li>
+                            <li>2020 г. – российский автономный подводный аппарат «Витязь-Д» погрузился на дно Марианской впадины.</li>
+                        </ul>
+                    </div>
+                    <div style="display: block;" class="card7" id="but">
+                        <button onclick="showNew(7)">Подробнее</button>
+                    </div>
+                    <div style="display: none;" class="card7" id="but">
+                        <button onclick="hideNew(7)">Скрыть</button>
+                    </div>
+                </div>
+    
+                <div class="news-card">
+                    <h5>06 мая 2024</h5>
+                    <h3 style="text-shadow: rgb(180, 178, 178) 5px 2px 10px;">Обновление автопарка «Эндофарм»</h3>
+                    <div class="display">
+                        <img src="../rgz/pictures/новости2.png" width="25%" class="logo">
+                        ФГУП «Московский эндокринный завод» в годы ВОВ завод обеспечивал страну необходимыми лекарствами, а сегодня активно работает над импортозамещением.
+                    </div>
+                    <div style="display: none;" class="card8" id="but">
+                        <p>На сегодняшний день наш клиент выпускает 150+ препаратов, которые продаются в 89 субъектах РФ.
+                        Мы работаем с «Эндофарм» с 2019 года. По новому договору передадим в лизинг автомобили LADA Niva Travel, 
+                        УАЗы Патриот и грузовой фургон ГАЗ для транспортировки лекарств.
+                        Благодарим нашего постоянного клиента за доверие.</p>
+                        <p>ПР-Лизинг – с заботой о здоровье!</p>
+                    </div>
+                    <div style="display: block;" class="card8" id="but">
+                        <button onclick="showNew(8)">Подробнее</button>
+                    </div>
+                    <div style="display: none;" class="card8" id="but">
+                        <button onclick="hideNew(8)">Скрыть</button>
+                    </div>
+                </div>
+    
+                <div class="news-card">
+                    <h5>03 мая 2024</h5>
+                    <h3 style="text-shadow: rgb(180, 178, 178) 5px 2px 10px;">«ПР-Лизинг» в рэнкинге Сибири</h3>
+                    <div class="display">
+                        <img src="../rgz/pictures/новости2.png" width="25%" class="logo">
+                        Аналитический центр «Эксперт» опубликовал рэнкинг лизинговых компаний Западной Сибири по итогам 2023 года.
+                    </div>
+                    <div style="display: none;" class="card9">
+                        <p>«ПР-Лизинг» занял следующие позиции:</p>
+                        <p>ТОП-3 по динамике нового бизнеса;<br>
+                        ТОП-5 среди филиалов федеральных и инорегиональных лизинговых компаний по объему нового бизнеса;<br>
+                        ТОП-6 по размеру портфеля;<br>
+                        ТОП-2 в сегменте лизинга для госучреждений.</p>
+                    </div>
+                    <div style="display: block;" class="card9" id="but">
+                        <button onclick="showNew(9)">Подробнее</button>
+                    </div>
+                    <div style="display: none;" class="card9" id="but">
+                        <button onclick="hideNew(9)">Скрыть</button>
+                    </div>
+                </div>
+    
+                <div class="news-card">
+                    <h5>01 мая 2024</h5>
+                    <h3 style="text-shadow: rgb(180, 178, 178) 5px 2px 10px;">Опубликована отчетность по РСБУ</h3>
+                    <div class="display">
+                        <img src="../rgz/pictures/новости2.png" width="25%" class="logo">
+                        ООО "ПР-Лизинг" на сайте раскрытия опубликовало отчетность по РСБУ за 1кв. 2024 г, а также отчетность по ГК ПР-Лизинг
+                    </div>
+                    <div style="display: none;" class="card10">
+                        <p>Показатели демонстрируют устойчивое развитие в соответствии с последовательной реализацией Стратегии-2025.</p>
+                        <p>Напомним, компания реализует СТРАТЕГИЮ2025 - войти в ТОП-20 ЛК по новому бизнесу к 2025 году (за 2023 - 37ые), 
+                        которая включает страт. инициативы (темп роста бизнеса выше рынка, диверсификация и снижение стоимости пассивов, адаптивный сервис, превосходящий ожидания контрагентов).</p>
+                        <p>ПР-Лизинг – больше простых решений!</p>
+                    </div>
+                    <div style="display: block;" class="card10" id="but">
+                        <button onclick="showNew(10)">Подробнее</button>
+                    </div>
+                    <div style="display: none;" class="card10" id="but">
+                        <button onclick="hideNew(10)">Скрыть</button>
+                    </div>
+                </div>
+            </div>
+    </main>
+    
+</body>
+</html>
