@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Демченко Нина Николаевна. Расчетно-графическая работа</title>
+    <link rel="stylesheet" href="main2.css">
+    <link rel="shortcut icon" href="favicon-16x16_rgz.png" type="image/x-icon">
+    <link rel="icon" href="favicon-16x16_rgz.png">
+    <script>
+        function getCureency() {
+            const url = "https://www.cbr-xml-daily.ru/daily_json.js";
+            fetch(url)
+                .then(function(response){
+                    return response.json();
+                })
+                .then (function(json) {
+                    let rate = json.Valute.KZT.Value;
+                    let nominal = json.Valute.KZT.Nominal;
+
+                    let quantity = document.getElementById('quantity').value;
+                    let currencyFrom = document.getElementById('currencyFrom').value;
+                    let currencyTo = document.getElementById('currencyTo').value;
+                    let result = document.getElementById('result');
+
+                    if (currencyFrom == 'KZT' && currencyTo == 'RUB') {
+                        let output = (quantity * rate) / nominal;
+                        result.innerText = output.toFixed(2) + " RUB";
+                    } 
+                    else if (currencyFrom == 'RUB' && currencyTo == 'KZT') {
+                        let output = (quantity / rate) * nominal;
+                        result.innerText = output.toFixed(2) + ' KZT';
+                    } 
+                    else {
+                        result.innerText = 'Ошибка! Вы ввели одну и ту же валюту.';
+                    }
+                });
+        }
+    </script>
+    <style>
+         .screen1 {
+            display: flex;
+            line-height: 1.5;
+        }
+        .block1 {
+            width: 50%;
+            background-color: rgb(232, 8, 32);
+            color: #efeff3;
+            padding: 20px;
+            border-radius: 50px;
+            margin-top: 70px;
+            margin-bottom: 20px;
+            box-shadow:  0px 5px 15px rgba(0, 0, 0, 0.35);
+            margin: auto;
+            margin-right: 500px;
+        }
+        .block2 {
+            background-color: #efeff3;
+            color: #646472;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px;
+            font-weight: 100;
+            box-shadow:  0px 5px 15px rgba(0, 0, 0, 0.35);
+            text-align: center;
+        }
+        h3 {
+            color: #efeff3;
+        }
+        p {
+            margin: 10px;
+            color: #333333;
+        }
+        input {
+            border: none;
+            width: 230px;
+            height: 30px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.35);
+            font-size: 20px;
+        }
+        select {
+            border: none;
+            border-radius: 5px;
+            width: 200px;
+            height: 30px;
+            font-size: 18px;
+            box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.35);
+            color: #646472;
+        }
+        button {
+            width: 150px;
+            height: 40px;
+            font-size: 15px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            background-color: rgb(95, 192, 46);
+            box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.35);
+            color: #efeff3;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: rgb(64,62,75);
+            box-shadow: 5px 0px 7px rgba(0, 0, 0, 0.35);
+        }
+    </style>
+</head>
+<body>
+    <header>
+    </header>
+
+    <main>
+        <div class="menu">
+            <h3 style="color: rgb(232, 8, 32)">Навигация</h3>
+            <ul>
+                <li>
+                    <a href="about.html">О компании</a>
+                </li>
+                <li>
+                    <a href="news.html">Новости</a>
+                </li>
+                <li>
+                    <a href="calculator.html">Курс валют</a>
+                </li>
+                <li>
+                    <a href="">Контактные данные</a>
+                </li>
+                <li>
+                    <a href="">Видео</a>
+                </li>
+            </ul>
+        </div>
+
+        <h1>Курс валют</h1>
+            <div class="screen1">
+                <p>
+                    "Пр-лизинг" успешно конвертирует курс валют в рубли и обратно.<br>
+                    Мы стремимся предоставлять нашим клиентам лучшие условия<br>для проведения валютных операций,
+                    и у нас это получается благодаря<br>нашим передовым технологиям.<br>
+                    Наша команда постоянно следит за изменениями на валютном<br>рынке, анализирует тренды и прогнозирует 
+                    возможные колебания курсов.<br><br>
+                    Благодаря этому мы можем предложить<br>нашим клиентам самые выгодные условия обмена валюты!
+                </p>
+                <img src="../rgz/pictures/калькулятор.png">
+            </div>
+
+            <img src="../rgz/pictures/1экран.png"><br><br>
+
+            <div class="block1">
+                <h3>Расчет валюты</h3>
+                <div class="block2">
+                    <p>Введите сумму, которую необходимо конвертировать:</p>
+
+                    <input type="number" id="quantity" min="0" oninput="value = Math.max(value, 0)" placeholder="Введите сумму"><br>
+
+                    <p>Конвертировать из:</p>
+
+                    <select id="currencyFrom">
+                        <option value="RUB">Российский рубль</option>
+                        <option value="KZT">Казахстанский тенге</option>
+                    </select><br>
+
+                    <p>Конвертировать в:</p>
+
+                    <select id="currencyTo">
+                        <option value="KZT">Казахстанский тенге</option>
+                        <option value="RUB">Российский рубль</option>
+                    </select><br>
+
+                    <button onclick="getCureency()">Конвертировать</button>
+
+                    <p id="result">Вывод:</p>
+                </div>
+            </div><br>
+    </main>
+    
+</body>
+</html>
