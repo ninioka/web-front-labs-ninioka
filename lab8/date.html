@@ -28,6 +28,35 @@
             background-color: rgba(250, 128, 114, 0.3);
             width: 20%;
         }
+        .dayOfWeek {
+            margin: auto;
+            margin-top: 15px;
+            padding: 20px;
+            text-align: center;
+            border: 3px double;
+            border-radius: 50px;
+            background-color: rgba(250, 128, 114, 0.3);
+            width: 40%;
+        }
+        input {
+            width: 110px;
+            border-radius: 5px;
+        }
+        button {
+            cursor: pointer;
+            margin: 10px;
+            font-size: 18px;
+            background-color: rgba(250, 128, 114, 0.3);
+            border: 2px dashed;
+            border-radius: 10px;
+            border-color: rgba(41, 22, 19, 0.7);
+            color: rgba(49, 26, 23, 0.7);
+            box-shadow: 4px 3px 3px rgba(96, 49, 44, 0.3);
+        }
+        button:hover {
+            border: 2px solid;
+            border-radius: 50px;
+        }
     </style>
 </head>
 <body onload="showDate()">
@@ -38,6 +67,13 @@
     <main>
         <div id="current-date"></div>
         <div id="date"></div>
+        <div class="dayOfWeek">
+            <input type="number" placeholder="Введите день" id="day" min="1" max="31">
+            <input type="number" placeholder="Введите месяц" id="month" min="1" max="12">
+            <input type="number" placeholder="Введите год" id="year" min="1699"><br>
+            <button onclick="getWeekDay()">Узнать день недели</button>
+            <div id="getWeekDay"></div>
+        </div>
     </main>
 
     <footer>
