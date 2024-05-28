@@ -34,7 +34,7 @@ function getWeekDay() {
     if (day < 1 || day > 31 || isNaN(day)) {
         dayOFWeek.innerText = "Ошибка! Убедитесь, что поле заполнено корректно.";        
     }
-    else if (month < 1 || month > 12 || isNaN(month)) {
+    else if (month < 0 || month > 12 || isNaN(month)) {
         dayOFWeek.innerText = "Ошибка! Убедитесь, что поле заполнено корректно.";
     }
     else if (year < 1699 || isNaN(year)) {
