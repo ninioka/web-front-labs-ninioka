@@ -60,11 +60,14 @@ a:hover {
     text-decoration: underline;
 }
 .menu {
-    position: fixed;
+    display: inline-block;
+    position: absolute;
     text-decoration: none;
     right: 0;
     top: 0;
-    height: 100%;
+    bottom: 0;
+    height: 40%;
+    border-bottom-left-radius: 30px;
     width: 200px;
     background-color: #fff;
     padding: 20px;
