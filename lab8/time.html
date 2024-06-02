@@ -14,6 +14,32 @@
             font-size: 20px;
             font-weight: bold;
         }
+        #second {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+        }
+        .clock {
+            width: 250px;
+            height: 250px;
+            border: 5px solid;
+            border-radius: 50%;
+            position: relative;
+            margin: 5% auto;
+            background-color: rgba(250, 128, 114, 0.3);                
+        }
+        #stick {
+            width: 110px;
+            height: 5px;
+            position: absolute;
+            top: 50%;
+            transform-origin: 100%;
+            transform: rotate(360deg);
+            transition: 0.5s;
+            background-color: Sienna;
+        }
     </style>
 </head>
 <body onload="showTime()">
@@ -23,6 +49,10 @@
     </header>
 
     <main>
+        <div id="second"></div>
+            <div class="clock">
+                <div id="stick"></div>
+            </div>
     </main>
 
     <footer>
