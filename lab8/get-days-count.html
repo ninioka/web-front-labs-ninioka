@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Демченко Нина Николаевна. Лабораторная 8</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../hesperosaurus.png" type="image/x-icon">
+    <link rel="icon" href="../hesperosaurus16x16.png">
+    <script src="lab8.js"></script>
+    <style>
+        .frame {
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+            border: 3px double;
+            border-radius: 50px;
+            background-color: rgba(250, 128, 114, 0.3);
+            width: 40%;
+        }
+        button {
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            padding: 5px;
+            font-size: 16px;
+        }
+        #count-days {
+            font-size: 23px;
+        } 
+    </style>
+</head>
+<body onload="showDate()">
+    <header>
+        НГТУ, ФБ, Лабораторная работа 8
+    </header>
+
+    <main>
+        <div class="frame">
+            <div>
+                <label for="birthday">Дата рождения: <input type="date" id="birthday"></label>
+            </div>
+            <div>
+                <button onclick="showDaysCount()">Показать число дней</button>
+            </div>
+            <div id="count-days"></div>
+            <button onclick="clearInput()">Очистить поля ввода и выводы</button>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Демченко Нина, ФБИ-22, 2 курс, 2024
+    </footer>
+    
+</body>
+</html>
+
