@@ -3,14 +3,14 @@ function showTime() {
     let currentTime = today.toLocaleTimeString('ru-RU');
     document.getElementById('time').innerHTML = currentTime;
 
-    const seconds = today.getSeconds();
-    const secondsDisplay = document.getElementById('second');
-    const secondHand = document.getElementById('stick');
+    const second = today.getSeconds();
+    const secondDisplay = document.getElementById('second');
+    const stick = document.getElementById('stick');
 
    
-    secondsDisplay.innerHTML = seconds.toString().padStart(2, '0');
+    secondDisplay.innerHTML = second.toString();
    
-    const secondsDegree = ((seconds / 60) * 360) + 90; 
-    secondHand.style.transform = `rotate(${secondsDegree}deg)`;
+    const secondDeg = ((second / 60) * 360) + 90; 
+    stick.style.transform = `rotate(${secondDeg}deg)`;
 }
 setInterval(showTime, 1000);
