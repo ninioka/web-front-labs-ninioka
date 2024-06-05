@@ -8,7 +8,7 @@ function showTime() {
     const stick = document.getElementById('stick');
 
    
-    secondDisplay.innerHTML = second.toString();
+    secondDisplay.innerHTML = second;
    
     const secondDeg = ((second / 60) * 360) + 90; 
     stick.style.transform = `rotate(${secondDeg}deg)`;
